@@ -1,0 +1,128 @@
+<!--Local Storage-->
+<!--<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Storage World</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+ 
+ 
+            #generateButton{
+                margin-top : 5px;
+                margin-bottom: 15px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents" align="center">
+            <button id="incrementButton">Tambah nilai</button>
+            <button id="clear">Hapus storage</button>
+            <h3>Kamu sudah menekan tombol di atas sebanyak:</h3>
+            <h2 id="count">0</h2>
+        </div>
+        
+        <script>
+        const localStorageKey = "PRESS_FREQUENCY";
+        if(typeof(localStorage)!== "undefined"){
+            if(localStorage.getItem(localStorageKey) === null){
+                localStorage.setItem(localStorageKey,0);
+            }
+            const incrementButton = document.getElementById("incrementButton");
+            const clearButton = document.getElementById("clear");
+            const countDisplay = document.getElementById("count");
+
+            countDisplay.innerText = localStorage.getItem(localStorageKey)
+
+            incrementButton.addEventListener("click",function(){
+                let count = localStorage.getItem(localStorageKey);
+                count++;
+                localStorage.setItem(localStorageKey,count);
+                countDisplay.innerText = localStorage.getItem(localStorageKey);
+            })
+            clearButton.addEventListener("click",function(){
+                localStorage.removeItem(localStorageKey);
+                countDisplay.innerText = 0;
+            })
+        
+        }else{
+            alert("Browser adna tidak mendukung adanya web storage");
+        }
+
+        
+        
+
+        </script>
+    </body>
+</html>
+-->
+<!--Session Storage-->
+<html>
+    <head>
+        <title>Web Storage World</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+ 
+ 
+            #generateButton{
+                margin-top : 5px;
+                margin-bottom: 15px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents" align="center">
+            <button id="incrementButton">Tambah nilai</button>
+            <button id="clear">Hapus storage</button>
+            <h3>Kamu sudah menekan tombol di atas sebanyak:</h3>
+            <h2 id="count">0</h2>
+        </div>
+        
+        <script>
+        const sessionStorageKey = "PRESS_FREQUENCY";
+        if(typeof(sessionStorage)!== "undefined"){
+            if(sessionStorage.getItem(sessionStorageKey) === null){
+                sessionStorage.setItem(sessionStorageKey,0);
+            }
+            const incrementButton = document.getElementById("incrementButton");
+            const clearButton = document.getElementById("clear");
+            const countDisplay = document.getElementById("count");
+
+            countDisplay.innerText = sessionStorage.getItem(sessionStorageKey)
+
+            incrementButton.addEventListener("click",function(){
+                let count = sessionStorage.getItem(sessionStorageKey);
+                count++;
+                sessionStorage.setItem(sessionStorageKey,count);
+                countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
+            })
+            clearButton.addEventListener("click",function(){
+                sessionStorage.removeItem(sessionStorageKey);
+                countDisplay.innerText = 0;
+            })
+        
+        }else{
+            alert("Browser adna tidak mendukung adanya web storage");
+        }
+
+        
+        
+
+        </script>
+    </body>
+</html>
